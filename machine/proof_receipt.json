@@ -1,8 +1,9 @@
 {
   "schema": "glaciereq.proof-receipt.v1",
   "repository": "GlacierEQ/anduril-track-envelope-compiler",
-  "source_sha": "e3358b4c9ca1e3832f07a48393b73fd6533cd18d77f22c35aab1cec04a6c6e18",
-  "proof_id": "wave-b-anduril-track-envelope-compiler-1786315039",
+  "source_sha": "37775d0f678b73cd9cac19248f0314452afaf4e095963406c35dc3e362283797",
+  "source_sha_algorithm": "sha256(newline_join('{rel}:{sha256(bytes)}' for src|scripts|tests .py/.md/.json))",
+  "proof_id": "wave-b-fix-anduril-track-envelope-compiler-1786316261",
   "environment": {
     "python": "3.9.6",
     "PYTHONPATH": "."
@@ -12,6 +13,9 @@
   ],
   "adversarial_tests": [
     "tests/test_adversarial.py"
+  ],
+  "authority_tests": [
+    "tests/test_promotion_authority.py::test_real_machine_grant_verifies_against_proof_receipt"
   ],
   "runtime": {
     "operate": "scripts/operate.py (x2)",
@@ -23,9 +27,9 @@
     "not production deployed",
     "reference implementation only"
   ],
-  "timestamp": "2026-08-09T22:37Z",
+  "timestamp": "2026-08-09T22:57Z",
   "artifact_hashes": {
-    "operability_receipt": "6d859a8ef7b5c28c9047629ed9239aa82f8d646c0d7b06510ca704091b8b0caf"
+    "operability_receipt": "27d865c660ac06fa512d15d7101906dfe9afca806e8239da740ca129a157b3b6"
   },
   "scratch_proof_log": "wave_b/anduril-track-envelope-compiler/proof.log"
 }

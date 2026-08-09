@@ -1,8 +1,9 @@
 {
   "schema": "glaciereq.operability-receipt.v1",
   "repository": "GlacierEQ/anduril-track-envelope-compiler",
-  "at": "2026-08-09T22:37Z",
-  "source_sha": "e3358b4c9ca1e3832f07a48393b73fd6533cd18d77f22c35aab1cec04a6c6e18",
+  "at": "2026-08-09T22:57Z",
+  "source_sha": "37775d0f678b73cd9cac19248f0314452afaf4e095963406c35dc3e362283797",
+  "source_sha_algorithm": "sha256(newline_join('{rel}:{sha256(bytes)}' for src|scripts|tests .py/.md/.json))",
   "entry": "scripts/operate.py",
   "primary_output": {
     "expected_x_max": 3.0,
