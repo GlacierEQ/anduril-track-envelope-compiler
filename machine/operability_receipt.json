@@ -1,0 +1,20 @@
+{
+  "schema": "glaciereq.operability-receipt.v1",
+  "repository": "GlacierEQ/anduril-track-envelope-compiler",
+  "at": "2026-08-09T22:37Z",
+  "source_sha": "e3358b4c9ca1e3832f07a48393b73fd6533cd18d77f22c35aab1cec04a6c6e18",
+  "entry": "scripts/operate.py",
+  "primary_output": {
+    "expected_x_max": 3.0,
+    "expected_x_min": -1.0,
+    "fingerprint": "83252bb1b71d4e32691881ffb26e513a4a40858ec1e01463b98bb034c0ae3292",
+    "ok": true,
+    "residual_uncertainty": 0.16198562070582861,
+    "track_id": "T1",
+    "x_max": 3.0,
+    "x_min": -1.0
+  },
+  "dual_run_ok": true,
+  "result": "PASS",
+  "scratch_launch_log": "wave_b/anduril-track-envelope-compiler/launch.log"
+}

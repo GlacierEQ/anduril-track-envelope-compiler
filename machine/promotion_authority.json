@@ -1,0 +1,10 @@
+{
+  "schema": "glaciereq.promotion-authority-grant.v1",
+  "repository": "GlacierEQ/anduril-track-envelope-compiler",
+  "source_sha": "e3358b4c9ca1e3832f07a48393b73fd6533cd18d77f22c35aab1cec04a6c6e18",
+  "proof_receipt_digest": "72a79518ab22b4400898ca227eeab5b909870c0fcd834e29e86ce01c5d342a34",
+  "not_after": 1786401439.758687,
+  "mac": "0ed68c59324b7a583a229d04c819e6ce7f99ca516c514585ae0f00cd9b06ec27",
+  "issuer": "local_operator_promotion_authority",
+  "verified": true
+}
