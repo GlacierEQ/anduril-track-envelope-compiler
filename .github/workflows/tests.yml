@@ -12,4 +12,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-      - run: clang -O2 -std=c11 -Wall -Wextra -o /tmp/ctest native/*_test.c && /tmp/ctest
+      - run: clang -O2 -std=c11 -Wall -Wextra -o /tmp/ctest native/*_test.c -lm && /tmp/ctest
