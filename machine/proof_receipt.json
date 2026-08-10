@@ -1,21 +1,18 @@
 {
   "schema": "glaciereq.proof-receipt.v1",
   "repository": "GlacierEQ/anduril-track-envelope-compiler",
-  "source_sha": "37775d0f678b73cd9cac19248f0314452afaf4e095963406c35dc3e362283797",
-  "source_sha_algorithm": "sha256(newline_join('{rel}:{sha256(bytes)}' for src|scripts|tests .py/.md/.json))",
-  "proof_id": "wave-b-fix-anduril-track-envelope-compiler-1786316261",
+  "source_sha": "699dfbaed7a48e7a7a028f1cc031b0dc94c9d923f3041af5fc5a60b239eb5997",
+  "proof_id": "elite-anduril-track-envelope-compiler-1786335149",
   "environment": {
-    "python": "3.9.6",
-    "PYTHONPATH": "."
+    "python": "/Users/kcbflux/job-app/excellence/.venv-elite/bin/python",
+    "PYTHONPATH": "/Users/kcbflux/job-app/repos/anduril-track-envelope-compiler:/Users/kcbflux/job-app/repos/anduril-track-envelope-compiler/src",
+    "entry": "unittest"
   },
   "tests": [
-    "PYTHONPATH=. python3 -m unittest discover -s tests -v (x2)"
+    "/Users/kcbflux/job-app/excellence/.venv-elite/bin/python -m unittest discover -s tests -v (x2)"
   ],
   "adversarial_tests": [
     "tests/test_adversarial.py"
-  ],
-  "authority_tests": [
-    "tests/test_promotion_authority.py::test_real_machine_grant_verifies_against_proof_receipt"
   ],
   "runtime": {
     "operate": "scripts/operate.py (x2)",
@@ -27,9 +24,8 @@
     "not production deployed",
     "reference implementation only"
   ],
-  "timestamp": "2026-08-09T22:57Z",
+  "timestamp": "2026-08-10T04:12Z",
   "artifact_hashes": {
-    "operability_receipt": "27d865c660ac06fa512d15d7101906dfe9afca806e8239da740ca129a157b3b6"
-  },
-  "scratch_proof_log": "wave_b/anduril-track-envelope-compiler/proof.log"
+    "operability_receipt": "8081d8f2e608ee29cf834a93fb3250871d29c268c2628c7ea8c0c17ad3d862ed"
+  }
 }
