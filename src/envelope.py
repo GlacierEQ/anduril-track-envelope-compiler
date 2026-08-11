@@ -45,11 +45,15 @@ class Detection:
             raise ValueError("confidence")
         if self.covariance_xx < 0.0 or self.covariance_yy < 0.0:
             raise ValueError("covariance diagonal")
+        cross = abs(self.covariance_xy)
+        if (self.covariance_xx == 0.0 or self.covariance_yy == 0.0) and cross != 0.0:
+            raise ValueError("covariance must be positive semidefinite")
+        scale = max(self.covariance_xx * self.covariance_yy, cross * cross, 1.0)
         determinant = (
             self.covariance_xx * self.covariance_yy
             - self.covariance_xy * self.covariance_xy
         )
-        if determinant < -1e-12:
+        if determinant < -math.ulp(scale) * 8.0:
             raise ValueError("covariance must be positive semidefinite")
 
 
@@ -134,7 +138,7 @@ class TrackEnvelopeCompiler:
         ts = [d.t for d in dets]
 
         for detection in dets:
-            age = reference_time - detection.t
+            age = max(0.0, reference_time - detection.t)
             temporal = self._decay(age)
             support = detection.confidence * temporal
             by_sensor.setdefault(detection.sensor_id, []).append((detection, support))
@@ -169,8 +173,6 @@ class TrackEnvelopeCompiler:
             else:
                 sensor_x = sum(d.x for d, _ in rows) / len(rows)
                 sensor_y = sum(d.y for d, _ in rows) / len(rows)
-            # Repeated reports from one sensor can refine its centroid but cannot
-            # manufacture more than one sensor's independent known-mass support.
             sensor_support = max(weight for _, weight in rows)
             residual_unknown_mass *= 1.0 - sensor_support
             fusion_weight_sum += sensor_support
