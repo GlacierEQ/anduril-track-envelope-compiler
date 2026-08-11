@@ -1,0 +1,32 @@
+{
+  "schema": "glaciereq.repo-evolution-receipt.v1",
+  "repository": "GlacierEQ/anduril-track-envelope-compiler",
+  "consumed_cursor": "next:temporal_decay_covariance_aware_growth_multi_sensor_fusion_preserve_residual_unknown_mass",
+  "candidate_source_sha": "fae1453719e54782c8c265635c8f05f121086995",
+  "workflow_run": 31454664574,
+  "proof": {"python": "PASS", "native_c": "PASS"},
+  "implemented": [
+    "half-life temporal decay reduces stale detection support at a fixed reference time",
+    "diagonal covariance expands axis-aligned track bounds and age increases that expansion",
+    "independent sensor support preserves residual unknown mass as explicit first-class state",
+    "repeated reports from one sensor refine one sensor centroid without multiplying independent known-mass authority",
+    "support-weighted fused center is computed across independent sensor centroids",
+    "legacy Python construction and native envelope_compile remain compatible",
+    "native envelope_compile_v2 exposes temporal, covariance, fusion, effective-confidence, and unknown-mass outputs",
+    "future detections relative to the requested reference time fail closed"
+  ],
+  "preserved_invariants": [
+    "empty detection sets do not promote a track envelope",
+    "uncertainty is not collapsed into a point-only confident projection",
+    "one chatty sensor cannot manufacture independent fusion authority by report multiplicity",
+    "residual unknown mass remains nonzero unless sensor support actually reaches certainty"
+  ],
+  "truth_boundaries": [
+    "Python validates covariance_xy for positive-semidefinite input but this evolution uses diagonal covariance only for axis-aligned geometric expansion",
+    "the native C contract currently carries covariance_xx and covariance_yy only",
+    "no motion-model prediction or outlier-gated fusion is implemented yet",
+    "fusion decisions are reproducible in tests but are not yet chained to a durable append-only fusion receipt ledger",
+    "no Anduril affiliation or production tracking deployment is claimed"
+  ],
+  "next_cursor": "next:cross_covariance_rotation_motion_prediction_outlier_gating_and_durable_fusion_receipt_chain"
+}
