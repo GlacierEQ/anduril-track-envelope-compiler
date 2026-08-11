@@ -105,6 +105,22 @@ class EnvTests(unittest.TestCase):
             independent.residual_unknown_mass,
         )
 
+    def test_repeated_sensor_refines_one_centroid_without_multiplying_fusion_weight(self):
+        compiler = TrackEnvelopeCompiler(pad=0.0)
+        env = compiler.compile(
+            "T",
+            [
+                Detection("chatty", 10.0, 0.0, 0.0, 0.8),
+                Detection("chatty", 10.0, 100.0, 0.0, 0.8),
+                Detection("peer", 10.0, 10.0, 0.0, 0.8),
+            ],
+            reference_time=10.0,
+        )
+        assert env is not None
+        # chatty sensor centroid=50 with one 0.8 support; peer centroid=10 with one 0.8 support.
+        self.assertEqual(env.sensor_count, 2)
+        self.assertAlmostEqual(env.fused_x, 30.0)
+
     def test_unknown_mass_is_preserved_unless_sensor_support_is_exactly_one(self):
         compiler = TrackEnvelopeCompiler(pad=0.0)
         bounded = compiler.compile(
