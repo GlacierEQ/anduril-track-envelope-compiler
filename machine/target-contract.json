@@ -2,21 +2,66 @@
   "schema": "glaciereq.repo-target-contract.v1",
   "identity": {
     "repository_id": "GlacierEQ/anduril-track-envelope-compiler",
-    "family": "elite-estate"
+    "family": "elite-estate",
+    "canonical_identity": "track-envelope-compiler"
   },
   "current": {
-    "state": "PROMOTED",
+    "state": "EVOLVING",
     "implemented": true,
     "tested": true,
-    "deployed": false
+    "adversarial_verified": true,
+    "operable": true,
+    "proof_receipt_bound": true,
+    "authority_bound": true,
+    "deployed": false,
+    "completed_evolution": {
+      "cursor": "next:temporal_decay_covariance_aware_growth_multi_sensor_fusion_preserve_residual_unknown_mass",
+      "candidate_source_sha": "fae1453719e54782c8c265635c8f05f121086995",
+      "workflow_run": 31454664574,
+      "python": "PASS",
+      "native_c": "PASS"
+    }
   },
-  "nonclaims": [
-    "no employer affiliation",
-    "no production deployment without receipt"
+  "target": {
+    "purpose": "Compile multi-sensor detections into bounded spatiotemporal envelopes that preserve stale-evidence decay, geometric uncertainty, independent-sensor authority, and residual unknown mass.",
+    "current_mechanisms": [
+      "half-life temporal decay at an explicit reference time",
+      "diagonal covariance expansion with age-dependent growth",
+      "per-sensor centroid refinement without report-count authority multiplication",
+      "independent-sensor known-mass fusion and explicit residual unknown mass",
+      "support-weighted fused center",
+      "backward-compatible Python and native C interfaces"
+    ],
+    "next_cursor": "next:cross_covariance_rotation_motion_prediction_outlier_gating_and_durable_fusion_receipt_chain",
+    "next_bottleneck": "off-diagonal covariance is not yet converted into rotated envelope geometry; the compiler also lacks motion prediction, outlier-gated fusion, and durable append-only fusion receipts"
+  },
+  "invariants": [
+    "empty evidence cannot create a track envelope",
+    "stale evidence loses support instead of remaining timelessly authoritative",
+    "one sensor cannot manufacture independent known mass through repeated reports",
+    "residual unknown mass remains visible unless evidence actually reaches certainty",
+    "repository identity and lineage remain preserved"
   ],
   "donor_plan": {
     "mode": "none",
-    "donors": []
+    "donors": [],
+    "strategy": "INDEPENDENT_MECHANISM_PRESERVED"
   },
-  "frozen_at": "2026-08-10T04:12Z"
+  "promotion": {
+    "required_tests": ["python_unit", "native_c", "legacy_compatibility", "adversarial_uncertainty"],
+    "require_exact_source_sha": true,
+    "require_receipt": true,
+    "require_nonclaims": true
+  },
+  "nonclaims": [
+    "no employer affiliation",
+    "no production deployment without receipt",
+    "no Anduril affiliation or production tracking deployment",
+    "covariance_xy is validated in Python but is not yet used to rotate axis-aligned bounds",
+    "native C currently represents diagonal covariance only",
+    "no motion-model prediction or outlier-gated fusion yet",
+    "no durable append-only fusion receipt chain yet"
+  ],
+  "evolution_receipt": "machine/evolution-receipts/2026-08-11-temporal-covariance-fusion.json",
+  "frozen_at": "2026-08-11T03:18:00Z"
 }
