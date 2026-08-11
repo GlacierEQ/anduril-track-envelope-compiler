@@ -2,77 +2,22 @@
   "schema": "glaciereq.repo-excellence-state.v1",
   "repository": "GlacierEQ/anduril-track-envelope-compiler",
   "principal_state": "EVOLVING",
+  "claim_ceiling": "PROMOTED",
   "gates": {
-    "IDENTITY_RESOLVED": {
-      "status": "PASS",
-      "at": "2026-08-10T06:25Z",
-      "evidence": "github GlacierEQ/anduril-track-envelope-compiler"
-    },
-    "PROBLEM_VERIFIED": {
-      "status": "PASS",
-      "at": "2026-08-10T06:25Z",
-      "evidence": "README/ISSUE_CONTRACT problem bound"
-    },
-    "TARGET_CONTRACT_FROZEN": {
-      "status": "PASS",
-      "at": "2026-08-10T06:25Z",
-      "evidence": "machine/target-contract.json"
-    },
-    "DONOR_PLAN_RESOLVED": {
-      "status": "PASS",
-      "at": "2026-08-10T06:25Z",
-      "evidence": "elite bar seed; donor_reuse=none"
-    },
-    "VERTICAL_SLICE_ALIVE": {
-      "status": "PASS",
-      "at": "2026-08-10T06:25Z",
-      "evidence": "src mechanism + scripts/operate.py"
-    },
-    "CENTRAL_MECHANISM_PRESENT": {
-      "status": "PASS",
-      "at": "2026-08-10T06:25Z",
-      "evidence": "central mechanism in src/"
-    },
-    "DETERMINISTIC_PROOF_GREEN": {
-      "status": "PASS",
-      "at": "2026-08-10T06:25Z",
-      "evidence": "dual-run green tests"
-    },
-    "ADVERSARIAL_SURVIVAL": {
-      "status": "PASS",
-      "at": "2026-08-10T06:25Z",
-      "evidence": "tests/test_adversarial.py"
-    },
-    "OPERABLE_AND_OBSERVABLE": {
-      "status": "PASS",
-      "at": "2026-08-10T06:25Z",
-      "evidence": "scripts/operate.py dual-run PASS; primary ok"
-    },
-    "PROOF_RECEIPT_BOUND": {
-      "status": "PASS",
-      "at": "2026-08-10T06:25Z",
-      "evidence": "machine/proof_receipt.json bound"
-    },
-    "AUTHORITY_BOUND": {
-      "status": "PASS",
-      "at": "2026-08-10T06:25Z",
-      "evidence": "promotion_authority.json local HMAC grant"
-    },
-    "PROJECTION_TRUTH_CLOSED": {
-      "status": "PASS",
-      "at": "2026-08-10T06:25Z",
-      "evidence": "proof=a05c76ece7cf8103; authority=b36091edb620e80c; operability=8081d8f2e608ee29; claim_ceiling=leaf-native; nonclaims=non_affiliation_preserved; projection_role=monolith_projection_only; readback=operate_content_checked+validator_PASS"
-    },
-    "CANONICAL_POSITION_RESOLVED": {
-      "status": "PASS",
-      "at": "2026-08-10T09:50Z",
-      "evidence": "machine/canonical-position.json position_state=RESOLVED; canonical_identity=track-envelope-compiler; role=company_specific_specialist_system; repository identity and lineage preserved"
-    },
-    "EVOLUTION_CURSOR_DEFINED": {
-      "status": "PASS",
-      "at": "2026-08-10T09:50Z",
-      "evidence": "next:temporal_decay_covariance_aware_growth_multi_sensor_fusion_preserve_residual_unknown_mass"
-    },
+    "IDENTITY_RESOLVED": {"status":"PASS","at":"2026-08-10T06:25Z","evidence":"github GlacierEQ/anduril-track-envelope-compiler"},
+    "PROBLEM_VERIFIED": {"status":"PASS","at":"2026-08-10T06:25Z","evidence":"README/ISSUE_CONTRACT problem bound"},
+    "TARGET_CONTRACT_FROZEN": {"status":"PASS","at":"2026-08-11T03:18Z","evidence":"machine/target-contract.json refreshed after temporal/covariance fusion evolution"},
+    "DONOR_PLAN_RESOLVED": {"status":"PASS","at":"2026-08-10T06:25Z","evidence":"independent Anduril-specialist mechanism; donor_reuse=none"},
+    "VERTICAL_SLICE_ALIVE": {"status":"PASS","at":"2026-08-10T06:25Z","evidence":"src/envelope.py + native/envelope.c + scripts/operate.py"},
+    "CENTRAL_MECHANISM_PRESENT": {"status":"PASS","at":"2026-08-11T03:18Z","evidence":"temporal decay, covariance-expanded bounds, independent-sensor fusion, explicit residual unknown mass"},
+    "DETERMINISTIC_PROOF_GREEN": {"status":"PASS","at":"2026-08-11T03:18Z","evidence":"candidate fae1453719e54782c8c265635c8f05f121086995 passed Python and native C in workflow 31454664574"},
+    "ADVERSARIAL_SURVIVAL": {"status":"PASS","at":"2026-08-11T03:18Z","evidence":"workflow 31454664574 proves stale-support decay, covariance growth, unknown-mass preservation, chatty-sensor authority bounds, future-reference refusal, and legacy compatibility"},
+    "OPERABLE_AND_OBSERVABLE": {"status":"PASS","at":"2026-08-10T06:25Z","evidence":"scripts/operate.py preserved; TrackEnvelope now exposes fused center, effective confidence, residual unknown mass, sensor count, reference time, and per-sensor fusion state"},
+    "PROOF_RECEIPT_BOUND": {"status":"PASS","at":"2026-08-11T03:18Z","evidence":"machine/proof_receipt.json retained + machine/evolution-receipts/2026-08-11-temporal-covariance-fusion.json"},
+    "AUTHORITY_BOUND": {"status":"PASS","at":"2026-08-11T03:18Z","evidence":"independent reference authority only; one sensor cannot multiply independent known mass through report count"},
+    "PROJECTION_TRUTH_CLOSED": {"status":"PASS","at":"2026-08-11T03:18Z","evidence":"canonical position explicitly fences cross-covariance rotation, motion prediction, outlier gating, durable receipts, affiliation, and deployment claims"},
+    "CANONICAL_POSITION_RESOLVED": {"status":"PASS","at":"2026-08-11T03:18Z","evidence":"machine/canonical-position.json owns uncertainty_preserving_track_envelopes and binds completed evolution receipt"},
+    "EVOLUTION_CURSOR_DEFINED": {"status":"PASS","at":"2026-08-11T03:18Z","evidence":"next:cross_covariance_rotation_motion_prediction_outlier_gating_and_durable_fusion_receipt_chain"},
     "problem_verified": true,
     "unique_value_known": true,
     "canonical_identity_known": true,
@@ -84,118 +29,38 @@
     "proof_receipt_bound_to_sha": true,
     "reusable_capabilities_extracted": true,
     "projections_truth_consistent": true,
+    "canonical_position_resolved": true,
     "evolution_cursor_defined": true
   },
   "history": [
+    {"at":"2026-08-10T06:25Z","from":"DISCOVERED","to":"IDENTITY_RESOLVED","gate":"IDENTITY_RESOLVED","result":"PASS","note":"github GlacierEQ/anduril-track-envelope-compiler"},
+    {"at":"2026-08-10T06:25Z","from":"IDENTITY_RESOLVED","to":"PROBLEM_VERIFIED","gate":"PROBLEM_VERIFIED","result":"PASS","note":"README/ISSUE_CONTRACT problem bound"},
+    {"at":"2026-08-10T06:25Z","from":"PROBLEM_VERIFIED","to":"TARGET_CONTRACTED","gate":"TARGET_CONTRACT_FROZEN","result":"PASS","note":"machine/target-contract.json"},
+    {"at":"2026-08-10T06:25Z","from":"TARGET_CONTRACTED","to":"SEEDED","gate":"DONOR_PLAN_RESOLVED","result":"PASS","note":"elite bar seed; donor_reuse=none"},
+    {"at":"2026-08-10T06:25Z","from":"SEEDED","to":"VERTICAL_SLICE","gate":"VERTICAL_SLICE_ALIVE","result":"PASS","note":"src mechanism + scripts/operate.py"},
+    {"at":"2026-08-10T06:25Z","from":"VERTICAL_SLICE","to":"IMPLEMENTED","gate":"CENTRAL_MECHANISM_PRESENT","result":"PASS","note":"central mechanism in src/"},
+    {"at":"2026-08-10T06:25Z","from":"IMPLEMENTED","to":"TESTED","gate":"DETERMINISTIC_PROOF_GREEN","result":"PASS","note":"dual-run green tests"},
+    {"at":"2026-08-10T06:25Z","from":"TESTED","to":"ADVERSARIAL_VERIFIED","gate":"ADVERSARIAL_SURVIVAL","result":"PASS","note":"tests/test_adversarial.py"},
+    {"at":"2026-08-10T06:25Z","from":"ADVERSARIAL_VERIFIED","to":"OPERABLE","gate":"OPERABLE_AND_OBSERVABLE","result":"PASS","note":"scripts/operate.py dual-run PASS; primary ok"},
+    {"at":"2026-08-10T06:25Z","from":"OPERABLE","to":"PROOF_REPRODUCED","gate":"PROOF_RECEIPT_BOUND","result":"PASS","note":"machine/proof_receipt.json bound"},
+    {"at":"2026-08-10T06:25Z","from":"PROOF_REPRODUCED","to":"PROMOTED","gate":"AUTHORITY_BOUND","result":"PASS","note":"promotion_authority + PROJECTION_TRUTH_CLOSED"},
+    {"at":"2026-08-10T09:50Z","from":"PROMOTED","to":"CANONICAL","gate":"CANONICAL_POSITION_RESOLVED","result":"PASS","note":"machine/canonical-position.json resolves this repository as the owning Anduril specialist implementation and preserves identity/lineage"},
+    {"at":"2026-08-10T09:50Z","from":"CANONICAL","to":"EVOLVING","gate":"EVOLUTION_CURSOR_DEFINED","result":"PASS","note":"temporal decay, covariance-aware envelope growth, and multi-sensor fusion while preserving residual unknown mass"}
+  ],
+  "evolution_history": [
     {
-      "at": "2026-08-10T06:25Z",
-      "from": "DISCOVERED",
-      "to": "IDENTITY_RESOLVED",
-      "gate": "IDENTITY_RESOLVED",
+      "consumed_cursor": "next:temporal_decay_covariance_aware_growth_multi_sensor_fusion_preserve_residual_unknown_mass",
+      "candidate_source_sha": "fae1453719e54782c8c265635c8f05f121086995",
+      "workflow_run": 31454664574,
       "result": "PASS",
-      "note": "github GlacierEQ/anduril-track-envelope-compiler"
-    },
-    {
-      "at": "2026-08-10T06:25Z",
-      "from": "IDENTITY_RESOLVED",
-      "to": "PROBLEM_VERIFIED",
-      "gate": "PROBLEM_VERIFIED",
-      "result": "PASS",
-      "note": "README/ISSUE_CONTRACT problem bound"
-    },
-    {
-      "at": "2026-08-10T06:25Z",
-      "from": "PROBLEM_VERIFIED",
-      "to": "TARGET_CONTRACTED",
-      "gate": "TARGET_CONTRACT_FROZEN",
-      "result": "PASS",
-      "note": "machine/target-contract.json"
-    },
-    {
-      "at": "2026-08-10T06:25Z",
-      "from": "TARGET_CONTRACTED",
-      "to": "SEEDED",
-      "gate": "DONOR_PLAN_RESOLVED",
-      "result": "PASS",
-      "note": "elite bar seed; donor_reuse=none"
-    },
-    {
-      "at": "2026-08-10T06:25Z",
-      "from": "SEEDED",
-      "to": "VERTICAL_SLICE",
-      "gate": "VERTICAL_SLICE_ALIVE",
-      "result": "PASS",
-      "note": "src mechanism + scripts/operate.py"
-    },
-    {
-      "at": "2026-08-10T06:25Z",
-      "from": "VERTICAL_SLICE",
-      "to": "IMPLEMENTED",
-      "gate": "CENTRAL_MECHANISM_PRESENT",
-      "result": "PASS",
-      "note": "central mechanism in src/"
-    },
-    {
-      "at": "2026-08-10T06:25Z",
-      "from": "IMPLEMENTED",
-      "to": "TESTED",
-      "gate": "DETERMINISTIC_PROOF_GREEN",
-      "result": "PASS",
-      "note": "dual-run green tests"
-    },
-    {
-      "at": "2026-08-10T06:25Z",
-      "from": "TESTED",
-      "to": "ADVERSARIAL_VERIFIED",
-      "gate": "ADVERSARIAL_SURVIVAL",
-      "result": "PASS",
-      "note": "tests/test_adversarial.py"
-    },
-    {
-      "at": "2026-08-10T06:25Z",
-      "from": "ADVERSARIAL_VERIFIED",
-      "to": "OPERABLE",
-      "gate": "OPERABLE_AND_OBSERVABLE",
-      "result": "PASS",
-      "note": "scripts/operate.py dual-run PASS; primary ok"
-    },
-    {
-      "at": "2026-08-10T06:25Z",
-      "from": "OPERABLE",
-      "to": "PROOF_REPRODUCED",
-      "gate": "PROOF_RECEIPT_BOUND",
-      "result": "PASS",
-      "note": "machine/proof_receipt.json bound"
-    },
-    {
-      "at": "2026-08-10T06:25Z",
-      "from": "PROOF_REPRODUCED",
-      "to": "PROMOTED",
-      "gate": "AUTHORITY_BOUND",
-      "result": "PASS",
-      "note": "promotion_authority + PROJECTION_TRUTH_CLOSED"
-    },
-    {
-      "at": "2026-08-10T09:50Z",
-      "from": "PROMOTED",
-      "to": "CANONICAL",
-      "gate": "CANONICAL_POSITION_RESOLVED",
-      "result": "PASS",
-      "note": "machine/canonical-position.json already resolves this repository as the owning Anduril specialist implementation and preserves identity/lineage"
-    },
-    {
-      "at": "2026-08-10T09:50Z",
-      "from": "CANONICAL",
-      "to": "EVOLVING",
-      "gate": "EVOLUTION_CURSOR_DEFINED",
-      "result": "PASS",
-      "note": "temporal decay, covariance-aware envelope growth, and multi-sensor fusion while preserving residual unknown mass"
+      "receipt": "machine/evolution-receipts/2026-08-11-temporal-covariance-fusion.json",
+      "next_cursor": "next:cross_covariance_rotation_motion_prediction_outlier_gating_and_durable_fusion_receipt_chain"
     }
   ],
   "contract_ref": "machine/target-contract.json",
   "scores_ref": "machine/excellence-scores.json",
   "canonical_position_ref": "machine/canonical-position.json",
-  "evolution_cursor": "next:temporal_decay_covariance_aware_growth_multi_sensor_fusion_preserve_residual_unknown_mass",
+  "evolution_cursor": "next:cross_covariance_rotation_motion_prediction_outlier_gating_and_durable_fusion_receipt_chain",
   "wave": {
     "id": "ELITE-ESTATE-2026-08-10",
     "proof_ok": true,
@@ -206,7 +71,8 @@
   },
   "state": "EVOLVING",
   "proof_receipt": {
-    "source_sha": "HYPER_VALIDATED_SHA256",
-    "identity": "HYPER_VALIDATED_IDENTITY"
+    "source_sha": "fae1453719e54782c8c265635c8f05f121086995",
+    "workflow_run": 31454664574,
+    "evolution_receipt": "machine/evolution-receipts/2026-08-11-temporal-covariance-fusion.json"
   }
 }
