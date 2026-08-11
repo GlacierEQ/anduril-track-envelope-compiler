@@ -40,6 +40,17 @@ class EnvTests(unittest.TestCase):
         self.assertAlmostEqual(fresh.residual_unknown_mass, 0.2)
         self.assertAlmostEqual(stale.residual_unknown_mass, 0.6)
 
+    def test_tolerated_future_roundoff_does_not_amplify_support(self):
+        compiler = TrackEnvelopeCompiler(pad=0.0, half_life=1e-12)
+        env = compiler.compile(
+            "T",
+            [Detection("s1", 1.0 + 5e-13, 0.0, 0.0, 0.8)],
+            reference_time=1.0,
+        )
+        assert env is not None
+        self.assertAlmostEqual(env.effective_confidence, 0.8)
+        self.assertAlmostEqual(env.residual_unknown_mass, 0.2)
+
     def test_covariance_expands_bounds_and_age_inflates_it_further(self):
         compiler = TrackEnvelopeCompiler(
             pad=1.0,
@@ -117,7 +128,6 @@ class EnvTests(unittest.TestCase):
             reference_time=10.0,
         )
         assert env is not None
-        # chatty sensor centroid=50 with one 0.8 support; peer centroid=10 with one 0.8 support.
         self.assertEqual(env.sensor_count, 2)
         self.assertAlmostEqual(env.fused_x, 30.0)
 
@@ -168,6 +178,17 @@ class EnvTests(unittest.TestCase):
                 covariance_xx=1.0,
                 covariance_yy=1.0,
                 covariance_xy=2.0,
+            )
+        with self.assertRaises(ValueError):
+            Detection(
+                "s1",
+                0.0,
+                0.0,
+                0.0,
+                0.8,
+                covariance_xx=0.0,
+                covariance_yy=0.0,
+                covariance_xy=1e-7,
             )
         compiler = TrackEnvelopeCompiler()
         with self.assertRaises(ValueError):
