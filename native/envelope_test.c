@@ -51,16 +51,25 @@ int main(void) {
     if (!closef(same_e.residual_unknown_mass, 0.2f, 1e-5f)) return 20;
     if (!closef(independent_e.residual_unknown_mass, 0.04f, 1e-5f)) return 21;
 
+    Detection chatty[3] = {
+        {10,0,0,0.8f,7,0,0},
+        {10,100,0,0.8f,7,0,0},
+        {10,10,0,0.8f,8,0,0}
+    };
+    TrackEnvelope chatty_e;
+    if (envelope_compile_v2(chatty, 3, 0.f, 10.f, 2.f, 0.25f, 10.f, &chatty_e) != 0) return 22;
+    if (chatty_e.sensor_count != 2 || !closef(chatty_e.fused_x, 30.f, 1e-4f)) return 23;
+
     Detection fused[2] = {
         {0,0,0,1.f,1,0,0},
         {10,10,0,1.f,2,0,0}
     };
     TrackEnvelope fused_e;
-    if (envelope_compile_v2(fused, 2, 0.f, 10.f, 2.f, 0.25f, 10.f, &fused_e) != 0) return 22;
-    if (!(fused_e.fused_x > 5.f && fused_e.fused_x < 10.f)) return 23;
+    if (envelope_compile_v2(fused, 2, 0.f, 10.f, 2.f, 0.25f, 10.f, &fused_e) != 0) return 24;
+    if (!(fused_e.fused_x > 5.f && fused_e.fused_x < 10.f)) return 25;
 
     Detection future[1] = {{21,0,0,0.8f,1,0,0}};
-    if (envelope_compile_v2(future, 1, 0.f, 10.f, 2.f, 0.25f, 20.f, &e) != -2) return 24;
+    if (envelope_compile_v2(future, 1, 0.f, 10.f, 2.f, 0.25f, 20.f, &e) != -2) return 26;
 
     printf("ok\n");
     return 0;
