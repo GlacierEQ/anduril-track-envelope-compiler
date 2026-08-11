@@ -71,6 +71,18 @@ int main(void) {
     Detection future[1] = {{21,0,0,0.8f,1,0,0}};
     if (envelope_compile_v2(future, 1, 0.f, 10.f, 2.f, 0.25f, 20.f, &e) != -2) return 26;
 
+    Detection zero_support[2] = {
+        {10,10,20,0.f,1,0,0},
+        {10,14,24,0.f,2,0,0}
+    };
+    if (envelope_compile_v2(zero_support, 2, 0.f, 10.f, 2.f, 0.25f, 10.f, &e) != 0) return 27;
+    if (!closef(e.fused_x, 12.f, 1e-5f) || !closef(e.fused_y, 22.f, 1e-5f)) return 28;
+
+    if (envelope_compile_v2(point, 1, NAN, 10.f, 2.f, 0.25f, 20.f, &e) != -1) return 29;
+    if (envelope_compile_v2(point, 1, 0.f, INFINITY, 2.f, 0.25f, 20.f, &e) != -1) return 30;
+    if (envelope_compile_v2(point, 1, 0.f, 10.f, NAN, 0.25f, 20.f, &e) != -1) return 31;
+    if (envelope_compile_v2(point, 1, 0.f, 10.f, 2.f, INFINITY, 20.f, &e) != -1) return 32;
+
     printf("ok\n");
     return 0;
 }
