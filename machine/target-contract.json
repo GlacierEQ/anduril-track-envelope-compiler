@@ -2,21 +2,47 @@
   "schema": "glaciereq.repo-target-contract.v1",
   "identity": {
     "repository_id": "GlacierEQ/anduril-track-envelope-compiler",
-    "family": "elite-estate"
+    "family": "elite-estate",
+    "canonical_identity": "track-envelope-compiler"
   },
   "current": {
-    "state": "PROMOTED",
+    "state": "EVOLVING",
     "implemented": true,
     "tested": true,
-    "deployed": false
+    "deployed": false,
+    "evolution_generation": 1
   },
-  "nonclaims": [
-    "no employer affiliation",
-    "no production deployment without receipt"
+  "target": {
+    "purpose": "Compile multi-sensor detections into bounded spatiotemporal envelopes without erasing evidence age, covariance, or residual unknown mass.",
+    "central_bottleneck": "Point-like or confidence-renormalized tracks can hide stale evidence, correlated repeated observations, and spatial uncertainty behind a single confident projection."
+  },
+  "invariants": [
+    "empty evidence does not produce a track envelope",
+    "same-sensor observation multiplicity does not create independent confidence",
+    "older evidence contributes less support according to the configured half-life",
+    "covariance inputs must be finite, non-negative on the diagonal, and positive semidefinite",
+    "covariance expands spatial bounds instead of being discarded",
+    "residual unknown mass is preserved as first-class output",
+    "Python envelope identity is order-independent and binds exact evidence plus fusion policy"
   ],
+  "promotion": {
+    "required_tests": ["python", "clang_c11_native", "adversarial"],
+    "require_exact_source_sha": true,
+    "require_receipt": true,
+    "require_nonclaims": true
+  },
   "donor_plan": {
-    "mode": "none",
+    "status": "RESOLVED",
+    "strategy": "INDEPENDENT_MECHANISM_PRESERVED",
     "donors": []
   },
-  "frozen_at": "2026-08-10T04:12Z"
+  "nonclaims": [
+    "no Anduril affiliation or adoption",
+    "no production tracking deployment",
+    "no sensor identity authentication",
+    "distinct sensor labels are not independently provenance-attested",
+    "no operational targeting authority"
+  ],
+  "completed_evolution_receipt": "machine/evolution-receipts/2026-08-11-temporal-covariance-fusion.json",
+  "next_evolution": "next:authenticated_sensor_identity_correlation_domains_and_versioned_fusion_receipts"
 }

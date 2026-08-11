@@ -1,0 +1,29 @@
+{
+  "schema": "glaciereq.repo-evolution-receipt.v1",
+  "repository": "GlacierEQ/anduril-track-envelope-compiler",
+  "consumed_cursor": "next:temporal_decay_covariance_aware_growth_multi_sensor_fusion_preserve_residual_unknown_mass",
+  "candidate_source_sha": "fb8e460e3b76b9d0453e702dfd2bd167368dd6a5",
+  "workflow_run": 31461547751,
+  "result": "PASS",
+  "observed_lanes": {
+    "python_unittest": "PASS",
+    "clang_c11_native": "PASS"
+  },
+  "verified_mechanisms": [
+    "temporally decayed per-sensor evidence support",
+    "same-sensor multiplicity does not create independent confidence",
+    "distinct sensor supports fuse while residual unknown mass remains explicit",
+    "axis-aligned covariance expands spatial bounds",
+    "non-PSD covariance and non-finite evidence fail closed",
+    "evidence ordering does not change the Python envelope fingerprint",
+    "legacy C envelope API remains available alongside the zero-allocation v2 path"
+  ],
+  "boundaries": [
+    "sensor identifiers are caller-supplied labels, not authenticated identities",
+    "distinct sensor identifiers are treated as independent evidence by this reference fusion rule",
+    "covariance inputs are caller-supplied and not provenance-attested",
+    "no Anduril affiliation or adoption",
+    "no production tracking or operational targeting deployment"
+  ],
+  "next_cursor": "next:authenticated_sensor_identity_correlation_domains_and_versioned_fusion_receipts"
+}

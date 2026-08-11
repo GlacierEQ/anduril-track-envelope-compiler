@@ -1,1 +1,31 @@
-{"capabilities": ["hyper-scaling"]}
+{
+  "schema": "glaciereq.repo-capabilities.v1",
+  "repository": "GlacierEQ/anduril-track-envelope-compiler",
+  "capabilities": [
+    {
+      "id": "uncertainty_preserving_track_envelope",
+      "status": "VERIFIED",
+      "evidence": "machine/evolution-receipts/2026-08-11-temporal-covariance-fusion.json"
+    },
+    {
+      "id": "temporal_evidence_decay",
+      "status": "VERIFIED",
+      "evidence": "workflow 31461547751"
+    },
+    {
+      "id": "covariance_aware_axis_aligned_growth",
+      "status": "VERIFIED",
+      "evidence": "workflow 31461547751"
+    },
+    {
+      "id": "sensor_level_confidence_fusion_with_unknown_mass",
+      "status": "VERIFIED",
+      "evidence": "workflow 31461547751"
+    }
+  ],
+  "nonclaims": [
+    "sensor identity authentication is not implemented",
+    "sensor independence is not provenance-attested",
+    "not a production tracking deployment"
+  ]
+}
