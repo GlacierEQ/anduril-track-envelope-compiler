@@ -25,8 +25,10 @@ int envelope_compile_v2(
     float reference_time,
     TrackEnvelope *out
 ) {
-    if (!dets || n <= 0 || !out || pad < 0.f || half_life <= 0.f ||
-        sigma_scale < 0.f || age_covariance_growth < 0.f || !isfinite(reference_time)) return -1;
+    if (!dets || n <= 0 || !out || !isfinite(pad) || !isfinite(half_life) ||
+        !isfinite(sigma_scale) || !isfinite(age_covariance_growth) ||
+        pad < 0.f || half_life <= 0.f || sigma_scale < 0.f ||
+        age_covariance_growth < 0.f || !isfinite(reference_time)) return -1;
 
     float xmin = INFINITY, xmax = -INFINITY;
     float ymin = INFINITY, ymax = -INFINITY;
@@ -96,8 +98,19 @@ int envelope_compile_v2(
     }
 
     float mean_c = csum / (float)n;
-    float fused_x = fusion_weight_sum > 0.f ? fusion_x_sum / fusion_weight_sum : 0.f;
-    float fused_y = fusion_weight_sum > 0.f ? fusion_y_sum / fusion_weight_sum : 0.f;
+    float fused_x, fused_y;
+    if (fusion_weight_sum > 0.f) {
+        fused_x = fusion_x_sum / fusion_weight_sum;
+        fused_y = fusion_y_sum / fusion_weight_sum;
+    } else {
+        float centroid_x = 0.f, centroid_y = 0.f;
+        for (int i = 0; i < n; i++) {
+            centroid_x += dets[i].x;
+            centroid_y += dets[i].y;
+        }
+        fused_x = centroid_x / (float)n;
+        fused_y = centroid_y / (float)n;
+    }
     float effective_c = 1.f - residual_unknown;
     float spread = (xmax - xmin) + (ymax - ymin);
     float avg_sigma = sigma_sum / (2.f * (float)n);
